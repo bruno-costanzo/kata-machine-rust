@@ -1,11 +1,13 @@
+mod binary_search_list;
+mod crystal_balls_list;
 mod linear_search_list;
 
 fn main() {
-    let haystack = [1, 2, 3, 4, 5];
-    let needle = 2;
+    let mut haystack: [bool; 1000000] = [false; 1000000]; // Inicializa todos los elementos a false
+    haystack[999998] = true;
 
     println!(
-        "{}",
-        linear_search_list::linear_search_list(haystack, needle)
+        "crystal ball breaks at floor: {}",
+        crystal_balls_list::crystal_balls_list(&haystack)
     );
 }
